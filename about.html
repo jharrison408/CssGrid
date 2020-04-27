@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Grid Guide - James Harrison</title>
+  <meta charset="utf-8">
+	
+	<!-- Required meta tag for resposive pages -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	<!-- Latest compiled and minified bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
+	<!--The next line of code should link to your local stylesheet-->
+	<!--IMPORTANT, THIS LINK MUST BE AFTER THE LINK TO bootstrap.min.css-->
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="images/icons8-edit-100.png" type="image/gif" sizes="16x16">
+	<!-- <a href="https://icons8.com/icon/102300/edit">Edit icon by Icons8</a>-->
+	
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<!-- Access to Font Awesome icons, etc.-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Google fonts Dosis for headings and Roboto for text. This link tag was created at https://fonts.google.com/-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+	  
+ 
+</head>
+<body>
+
+<header class="jumbotron bg-primary text-white text-center mb-0 pb-4">
+	<div class="container">
+		<h1>Learn CSS Grid</h1>
+		<p class="header-p">A beginner's guide to CSS Grid</p>
+		<p class="header-p">James Harrison | CIS 233DA | Spring 2020</p>
+    </div>
+</header>
+	
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+ 		<div class="container">
+        
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar">
+            <span class="navbar-toggler-icon" ></span>
+        </button> 
+    
+        <div id="main-navbar" class="collapse navbar-collapse">   
+            <ul class="navbar-nav w-100 justify-content-around">
+                <li class="nav-item"> <a class="nav-link" href="index.html"> Home </a> </li>
+                <li class="nav-item"> <a class="nav-link" href="about.html"> About</a> </li>
+                <li class="nav-item"> <a class="nav-link"  href="resources.html"> Resources </a> </li>
+            </ul>
+        </div> <!--End main-navbar"-->   
+                
+        </div> <!-- End container-->    
+</nav> <!-- End nav -->
+
+<main class="container"> <!-- Main Container -->
+	<div class="row">
+		<div class="col text-center mt-5">
+			<h1 class="text-left mb-3">Midterm Project for CIS 233DA Spring 2020</h1>
+			<h5 class="text-left">The project assignment was to create an instructional guide based on a topic of our choosing. In addition to the topic lessons, the website must be responsive and provide references to resources used throughout the research process.</h5>
+		</div>
+	</div>
+	
+	<div class="row mt-3">
+		<div class="col-lg-12 col-md-6 text-center">
+			<p class="text-left">I chose the topic of CSS Grid because I have had little experience with it and wanted to better understand the benefits of using it.</p>
+			<p class="text-left">From my perspective, CSS Grid is a quick way to layout your page areas. If you know exactly how you want your areas to be positioned and their sizes, you can explicitly define those areas and position them on the grid. It's also useful for experimenting with layouts and laying out areas in a way that would've been extremely difficult, like laying areas on top of other areas and adjusting their z-index.</p>	
+			
+		</div>
+		
+		<div class="col-lg-12 col-md-6 text-center">
+			<p class="text-left">In conjunction with media queries, you can adjust the grid for different screen sizes and easily control the layout for smaller screen and mobile views. When it comes to grid items, the implicit grid is amazing. Especially when creating an image gallery and not knowing exactly how many images your gallery will contain. You can define your grid columns, grid rows, but also define how new grid items will be placed outside of your defined grid.</p>
+			<p class="text-left">To make CSS Grid really useful I believe an understanding of Flexbox is essential. Espeically when it comes to controlling specific grid items or spacing them. </p>
+		</div>
+	</div>
+	
+	<div class="row">
+		<div class="col text-center m-5 pb-5">
+			<h4>Check out my <a href="resources.html"> Resources</a> page to learn more about CSS Grid.</h4>
+		</div>
+	</div>
+	
+</main>	<!-- End Main Container -->
+	
+	
+<footer class="mb-0">
+	<nav class="navbar navbar-light bg-light p-5">
+	  <div class="row">
+		<div class="col">
+		  <a class="navbar-brand" href="index.html">Home</a>
+		  <a class="navbar-brand" href="about.html">About</a>
+		  <a class="navbar-brand" href="resources.html">Resources</a>
+		</div>	
+	  </div>	
+		
+	  <div class="row">
+		<div class="col">
+		  <a class="navbar-brand" href="https://gridbyexample.com/" target="_blank">Grid By Example</a>
+	  	  <a class="navbar-brand" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">MDN Web Docs</a>
+		</div>	
+	  </div>
+	</nav>
+	<p class="text-center bg-light mb-0 pb-2">James Harrison | 2020</p>
+	
+</footer>	
+	
+</body>
+</html>

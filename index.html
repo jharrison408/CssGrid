@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>CSS Grid Guide - James Harrison</title>
+  <meta charset="utf-8">
+	
+	<!-- Required meta tag for resposive pages -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+	
+	
+	<!-- Latest compiled and minified bootstrap CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+	
+	<!--The next line of code should link to your local stylesheet-->
+	<!--IMPORTANT, THIS LINK MUST BE AFTER THE LINK TO bootstrap.min.css-->
+	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="images/icons8-edit-100.png" type="image/gif" sizes="16x16">
+	<!-- <a href="https://icons8.com/icon/102300/edit">Edit icon by Icons8</a>-->
+	
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	
+	<!-- Access to Font Awesome icons, etc.-->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Google fonts Dosis for headings and Roboto for text. This link tag was created at https://fonts.google.com/-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto+Mono:400,500,700&display=swap" rel="stylesheet">
+	  
+ 
+</head>
+<body>
+
+<header class="jumbotron bg-primary text-white text-center mb-0 pb-4">
+	<div class="container">
+		<h1>Learn CSS Grid</h1>
+		<p class="header-p">A beginner's guide to CSS Grid</p>
+		<p class="header-p">James Harrison | CIS 233DA | Spring 2020</p>
+    </div>
+</header>
+	
+<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
+ 		<div class="container">
+        
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#main-navbar">
+            <span class="navbar-toggler-icon" ></span>
+        </button> 
+    
+        <div id="main-navbar" class="collapse navbar-collapse">   
+            <ul class="navbar-nav w-100 justify-content-around">
+                <li class="nav-item"> <a class="nav-link" href="index.html"> Home </a> </li>
+                <li class="nav-item"> <a class="nav-link" href="about.html"> About</a> </li>
+                <li class="nav-item"> <a class="nav-link"  href="resources.html"> Resources </a> </li>
+            </ul>
+        </div> <!--End main-navbar"-->   
+                
+        </div> <!-- End container-->    
+</nav> <!-- End nav -->
+
+	
+
+<div class="row m-5 justify-content-center">
+	<div class="col-lg-8 mb-5">
+		<h2>What is CSS Grid?</h2>
+	</div>	
+	<div class="col-lg-8">
+		<p class="text-left">CSS Grid is a two-dimensional grid layout system implemented by CSS. Grids can be used to layout page areas, grid items and user interface elements. A grid, is simply the intersecting set of horizontal and vertical lines. Once defined, either explicitly or implicitly, elements can be placed onto the grid within these columns and rows.</p>
+		<p class="text-left">Grids can be defined by setting their track sizes with either fixed units, pixels, or with flexible units like percentages and the fr unit (created for CSS Grid). The fr unit represents a fraction of the available space within the grid container and one of main units we'll be utilizing in the examples related to responsive layouts.</p>
+		<p>The following examples are meant to be a guide for understanding the basic concepts of CSS Grid and their properties. While there are many resouces on CSS Grid and different ways to accomplish the same result, I have structured the code examples in a way that made the most sense to me.</p>
+		<h4>Table of Contents</h4>
+		<ol>
+			<li> <a href="#display-grid">Using display: grid;</a></li>
+			<li> <a href="#display-grid-inline">Using display: inline-grid;</a></li>
+			<li> <a href="#grid-tracks">Grid Tracks</a></li>
+			<li> <a href="#setting-grid-tracks">Setting Grid Tracks</a></li>
+			<li> <a href="#repeat-notation">Grid Repeat Notation</a></li>
+			<li> <a href="#explicit-implicit">Explicit Grid VS Implicit Grid</a></li>
+			<li> <a href="#implicit-tracks">Setting Tracks in Implicit Grid</a></li>
+			<li> <a href="#minmax">Using Minmax() Function</a></li>
+			<li> <a href="#grid-lines">Grid Lines</a></li>
+			<li> <a href="#grid-lines-example">Using Grid Lines</a></li>
+			<li> <a href="#grid-template-areas">Grid Template Areas</a></li>
+			<li> <a href="#align-justify-content">Aligning Grid Tracks with Justify-Content</a></li>
+			<li> <a href="#align-content">Aligning Grid Tracks with Align-Content</a></li>
+		</ol>
+	</div>	
+</div>	
+		
+	
+	
+<main class="m-4 pb-5"> <!-- Main Start -->
+	
+	<div class="row justify-content-md-center"> <!-- Start of Row Wrapper-->
+		<!-- Topic 1 Header: Create A Grid Container with "display: grid" -->
+		<div class="col col-lg-4 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="display-grid">Create A Grid Container with "display: grid"</h2>
+			<p>First, create a div with several child items. We'll name our div with a class name of "wrapper". In the css set wrapper to, <span>display: grid;</span>. Grid items are placed into rows implicitly.</p>
+			<p>As a result, each child item streches across the grid as a single column layout. Use the zoom buttons on the bottom of the codepen window to adjust your view.
+			</p>
+		</div>
+		
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12 m-4 align-self-center">
+			
+			<!-- CSS Grid Example 1 -->
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="css,result" data-user="jharrison67" data-slug-hash="WNvOopL" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="WNvOopL">
+	  		<span>See the Pen <a href="https://codepen.io/jharrison67/pen/WNvOopL">
+			WNvOopL</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+	  		on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+	
+		</div>
+		
+		<!-- Topic 2 Header: Create A Grid Container with "display: inline-grid" -->
+		<div class="col col-lg-4 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="display-grid-inline">Create A Grid Container with "display: inline-grid"</h2>
+			<p>Now let's see the difference using <span>display: inline-grid;</span>.</p>
+			<p>As a result, each child item is still placed in a single column layout but displayed as an inline element, occupying space that conforms to its content. 
+			</p>
+			<p>I have also added more content to Child Item 1 to illustrate how the other Child Items are affected. By adding more content, the other Child Items are also alloted the same horizontal row space impicitly!</p>
+		</div>
+		
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12 m-4 align-self-center">
+		<!-- CSS Grid Example 2 -->	
+		<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="html,result" data-user="jharrison67" data-slug-hash="gOpRoaa" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 2">
+  		<span>See the Pen <a href="https://codepen.io/jharrison67/pen/gOpRoaa">
+  		css grid 2</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+  		on <a href="https://codepen.io">CodePen</a>.</span>
+		</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		
+		</div>
+		<!-- Topic 3 Header: Grid Tracks -->
+		<div class="col col-xl-4 col-lg-3 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="grid-tracks">Grid Tracks</h2>
+			<p>I created this diagram to illustrate the concept of column and row tracks.</p>
+			<p>Here, we have four columns tracks, running vertically, each with a width of 100px.</p>
+			<p>We also have two row tracks, running horizontally, with a height of 100px.</p>
+			<p>When explicitly defining your grid, you allot how many column tracks you want and their widths as well as how many rows you want and their heights. You can use fixed units of measurement like pixels, or fluid units like the fr unit. The fr unit takes up any available space inside the container.</p>
+			<p>I've also added 20px gaps between the column tracks and the row tracks, further explained in the next step.</p>
+			<p>Use this diagram as a guide for the next lessons.</p>
+		</div>
+		<!-- Grid Track Diagram -->
+		<div class="col col-xl-6 col-lg-8 col-md-12 col-sm-12 col-12 fluid">
+			<img class="diagram" src=images/css_grid.svg alt="grid tracks diagram">
+		</div>
+	
+		
+		<!-- Topic 4 Header: Let's Set Grid Tracks -->
+		<div class="col col-lg-4 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="setting-grid-tracks">Let's Set Grid Tracks</h2>
+			<p>After setting the parent div to display: grid; we will now set the grid's rows and columns. To set the row heights we will use the property, <span>grid-template-rows: ;</span>, and to set the column widths we will use, <span>grid-template-columns: ;</span>. </p>
+			<p>Notice that the grid-template-rows property sets three rows, the first row at 1fr, the second row at 1fr and the third row at a fixed height of 200px. The grid-template-columns property sets three columns, the first column at 1fr, the second column at a fixed width of 150px, and the third column at 1fr.</p>
+			<p>I have also included the grid-gap property and set it to 20px of space between the rows and columns. The <span>grid-gap: ;</span> property is shorthand for setting the <span>grid-column-gap: ;</span> and <span>grid-row-gap: ;</span> properties. <span>Grid-column-gap: ;</span> sets the space between columns. <span>Grid-row-gap: ;</span> sets the space between rows. You can set each property individually or use the shorthand, <span>grid-gap: ;</span>. </p>
+		</div>
+		<!-- CSS Grid Example 3 -->
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="html,result" data-user="jharrison67" data-slug-hash="RwPgQXB" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 3">
+	  		<span>See the Pen <a href="https://codepen.io/jharrison67/pen/RwPgQXB">
+			css grid 3</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+	  on <a href="https://codepen.io">CodePen</a>.</span>
+	</p>
+	<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		
+		</div>
+		<!-- Topic 5 Header: Using Grid Repeat Notation -->
+		<div class="col col-lg-4 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="repeat-notation">Using Grid Repeat Notation</h2>
+			<p> When defining the grid's rows and columns, instead of typing out, grid-template-rows: 1fr 1fr 1fr 1fr; you can instead use repeat notation, like <span>grid-template-rows: repeat(4, 1fr)</span>.</p>
+			<p>Looking at the example code I've set, <span>grid-template-rows: repeat(3, 250px);</span> this is saying for the first three rows, give them a height of 250px.</p>
+			<p>For the columns, <span>grid-template-columns: repeat(4, 150px);</span> which defines four columns each having an equal width of 150px.</p>
+		</div>
+		<!-- CSS Grid Example 4 -->
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="html,result" data-user="jharrison67" data-slug-hash="dyoRmpK" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 4">
+	  		<span>See the Pen <a href="https://codepen.io/jharrison67/pen/dyoRmpK">
+			css grid 4</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+			on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+		<!-- Topic 6 Header: Explicit Grid VS Implicit Grid -->
+		<div class="col col-lg-4 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="explicit-implicit">Explicit Grid VS Implicit Grid</h2>
+			<p>In the previous examples we have been explicitly defining our grid. But what about content that is "outside" our defined grid? If we only define the columns, for example, two column tracks, we still get rows. Even though we did not define how the row tracks are sized they are placed implicitly. These implicit tracks are auto-sized by default and their size is determined by the content they hold. We saw this in our first example by setting the parent container to display: grid;, all the Child Items were implicitly placed into rows, auto-sized by their content.</p>
+			<p>In the code example, we have defined a two column layout, <span>grid-template-columns: 100px, 200px;</span>. So the first column has a width of 100px and the second column 200px. Notice how the Child Items are implicitly placed on the grid and auto-sized based on their content. Child Item 3 and Child Item 9 have additional content in them and affects their partner's height in the row.</p>
+		</div>
+		<!-- CSS Grid Example 5 -->
+		<div class="col col-lg-6 col-md-12 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="html,result" data-user="jharrison67" data-slug-hash="ExjXLQM" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 5">
+  			<span>See the Pen <a href="https://codepen.io/jharrison67/pen/ExjXLQM">
+  			css grid 5</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+  			on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+		<!-- Topic 7 Header: Set Tracks in the Implicit Grid -->
+		<div class="col col-lg-4 col-sm-12 col-12 m-4">
+			<h2 id="implicit-tracks">Set Tracks in the Implicit Grid</h2>
+			<p>To define the track sizes for items created in the implicit grid, use the properties, <span>grid-auto-rows: ;</span> and <span>grid-auto-columns: ;</span>.</p>
+			<p>In the css, I have set two column widths, <span>grid-template-columns: repeat(2, 300px);</span> resulting in two 300px columns.</p>
+			<p><span>Grid-auto-rows: 300px;</span> supplies the height of 300px for grid items implicitly placed within the grid. It does not matter how many items we add to the grid, they will always be given a fixed height of 300px.</p>
+			<p>It's important to note that by using <span>grid-auto-rows: 300px;</span> should the content inside a grid item exceed 300px, it will be hidden from view. Since we specified a fixed unit of measurement, the grid item cannot grow beyond 300px. If we used the fr unit or specified a <span>minmax();</span> property we can specify how it grows.</p>
+		</div>
+		
+		<!-- CSS Grid Example 6 -->
+		<div class="col col-lg-6 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="html,result" data-user="jharrison67" data-slug-hash="GRJEaWM" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 6">
+			  <span>See the Pen <a href="https://codepen.io/jharrison67/pen/GRJEaWM">
+			  css grid 6</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+			  on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+		<!-- Topic 8 Header: Minmax() Function -->
+		<div class="col col-lg-4 col-sm-12 col-12 m-4">
+			<h2 id="minmax">Minmax() Function</h2>
+			<p>As we saw in the previous example, our grid items were placed implicitly with a grid-auto-row of 300px of height. What if we want to provide a minimum height to the grid items but also allow them to expand to fit their content?</p>
+			<p>The <span>minmax()</span> function allows us to define the minimum width or height of grid items as well as how much they can expand.</p>
+			<p>In the css, I have set three columns, each with a fluid unit of 1fr. <span>Grid-auto-rows: minmax(100px, auto);</span> allows the grid items to have a minimum height of 100px and allows them to grow to any size (auto) dependig on their content.</p>
+			<p>Child Item 7 has more content added to illustrate this example. It's size has expanded to fit it's content. The height of all grid items will never shrink below 100px.</p>
+			<p>Instead of using, auto, you can specify another value if you want more control over a grid item. <span>minmax(100px, 300px);</span> would give a minimum of 100px and a growth up to 300px. Also note that <span>minmax()</span> can be used anywhere can defining your grid and used to control specific grid items.</p>
+		</div>
+		
+		<!-- CSS Grid Example 7 -->
+		<div class="col col-lg-6 col-md-4 col-sm-12 col-12 align-self-center m-4">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="html,result" data-user="jharrison67" data-slug-hash="MWwodzW" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 7">
+			  <span>See the Pen <a href="https://codepen.io/jharrison67/pen/MWwodzW">
+			  css grid 7</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+			  on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+		<!-- Topic 9 Header: Grid Lines -->
+		<div class="col col-xl-4 col-lg-4 col-md-12 col-sm-12 col-12 m-4">
+			<h2 id="grid-lines">Grid Lines</h2>
+			<p>Understanding Grid Lines, how to define them and being able to position items onto the grid is in my opinion the most exciting feature of CSS Grid. It allows you to quickly experiment with a responsive layout!</p>
+			<p>Remember the diagram from Grid Tracks? Well, grid lines are based on the columns and rows we define. I'll illustrate this with a diagram using grid items.</p>
+			<p>Here is a three column, three row grid. Notice that grid lines are defined at the start of a row/column, in between columns/rows, and at the end. Thus, three columns produces four grid column lines. A three column row produces four column lines.</p>
+			<p>Next we'll learn how to place items based on these grid lines.</p>
+		</div>
+		<!-- CSS Grid Lines Diagram -->
+		<div class="col col-xl-6 col-lg-6 col-md-8 col-sm-12 col-12 fluid">
+			<img class="diagram" src=images/gridlines.svg>
+		</div>
+		
+		<!-- Topic 10 Header: Grid Lines Example -->
+		<div class="col col-lg-4 col-sm-12 col-12 m-4">
+			<h2 id="grid-lines-example">Grid Lines Example</h2>
+			<p>For this example, I have explicitly defined a three column, three row grid. Which, from the previous diagram produces four column lines and four rows lines.</p>
+			<p>In the css I have defined three columns, each with 1fr unit, taking up any available space. The rows are defined as the first row have 1fr unit of space, then the second row a fixed height of 300px, and the third row 1fr unit.</p>
+			<p>Using the class name of header, I set <span>grid-column-start property: 1;</span> and <span>grid-column-end property: 4;</span> which allows it to fill the entire first row and span across all columns.</p>
+			<p>For the aside, I set <span>grid-column-start: 1;</span> and <span>grid-column-end: 2;</span> and <span>grid-row-start: 2;</span> and <span>grid-row-end: 3;</span> placing the aside inside the first column and on the second row with a height of 300px;.</p>
+			<p>The main is placed in the second column, <span>grid-column-start: 2;</span>, and ends on <span>grid-column-end: 4;</span> allowing it to take up the remaining space. Also it's placed on the second row, <span>grid-row-start: 2;</span> and <span>grid-row-end: 3;</span> and given a height of 300px.</p>
+			<p>The footer is placed as <span>grid-column-start: 1;</span> and <span>grid-column-end: 4;</span> allowing it to stretch across all columns. The row placement is, <span>grid-row-start: 3;</span> and <span>grid-row-end: 4;</span>, placing it as the third row with a height of 1fr.</p>
+			<p>In the css comments I have include the shorthand notation for placing grid items, <span>grid-column: 1 / 4;</span> is the same as defining the start and end. Same with row, <span>grid-row: 2 / 3;</span> defines an item start at the second grid line and ending at the third grid line.</p>
+		</div>	
+		
+		<!-- CSS Grid Example 8 -->
+		<div class="col col-lg-6 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="css,result" data-user="jharrison67" data-slug-hash="NWqvxKr" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 8">
+  			<span>See the Pen <a href="https://codepen.io/jharrison67/pen/NWqvxKr">
+  			css grid 8</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+  			on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+		<!-- Topic 11 Header: Grid Template Areas Example -->
+		<div class="col col-lg-4 col-sm-12 col-12 m-4">
+			<h2 id="grid-template-areas">Grid Template Areas</h2>
+			<p>Another method for layout is with the <span>grid-template-areas: ;</span> property.</p>
+			<p>Each grid item is assigned a value using the <span>grid-area:;</span> property. Header is, <span>grid-area: header;</span>, Aside is, <span>grid-area: aside;</span>, and so on.</p>
+			<p>In the parent div, to define the grid's layout use: <span><br>grid-template-areas: <br>"header header header header" <br> "aside main main aside-2" <br> "... footer footer ...";</span></p>
+			<p>The header item is placed on the first row, repeated four times to stretch across our four columns. Row two is defined as aside (first column), main main (second and third column), and aside-2 (fourth column). The third row is, ..., meaning an empty area, then footer footer (second and third column), and ..., another empty area.</p>
+		</div>
+		<!-- CSS Grid Example 9 -->
+		<div class="col col-lg-6 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="css,result" data-user="jharrison67" data-slug-hash="GRJMopb" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 9">
+  			<span>See the Pen <a href="https://codepen.io/jharrison67/pen/GRJMopb">
+  			css grid 9</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+  			on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>	
+		
+		<!-- Topic 12 Header: Justify-Content Columns Example -->
+		<div class="col col-lg-4 col-sm-12 col-12 m-4">
+			<h2 id="align-justify-content">Aligning Grid Tracks Along Columns with Justify-Content</h2>
+			<p>Grid tracks are aligned to the grid container along the rows and columns. For aligning tracks along the column axis, we'll use, <span>justify-content:;</span>.</p>
+			<p>Supporting properties include: <span>normal, start, end, center, stretch, space-around, space-between, space-evenly, baseline, first baseline, and last baseline</span>.</p>
+			<p>In the css, <span>.wrapper</span> has <span>justify-content: start;</span>. Placing content to the start of container. <span>.wrapper-2</span>, has <span>justify-content: end;</span>. Places content at the end of container. <span>.wrapper-3</span>, has <span>justify-content: center;</span>. Places content in center of container. <span>.wrapper-4</span>, has <span>justify-content: space-between;</span>. Remaining space distributed between column tracks. <span>.wrapper-5</span>, has <span>justify-content: space-around;</span>. Creating space around each items. <span>.wrapper-6</span>, has <span>justify-content: space-evenly;</span>. Creating equal amounts of space between items.</p>
+		</div>
+		
+		<!-- CSS Grid Example 10 -->
+		<div class="col col-lg-6 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="css,result" data-user="jharrison67" data-slug-hash="poJWEQd" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 10">
+  			<span>See the Pen <a href="https://codepen.io/jharrison67/pen/poJWEQd">
+  			css grid 10</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+  			on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+		<!-- Topic 13 Header: Justify-Content Rows Example -->
+		<div class="col col-lg-4 col-sm-12 col-12 m-4">
+			<h2 id="align-content">Aligning Grid Tracks Along Rows with Align-Content</h2>
+			<p>For aligning tracks along the row axis, we'll use, <span>align-content:;</span>.</p>
+			<p>Supporting properties include: <span>normal, start, end, center, stretch, space-around, space-between, space-evenly, baseline, first baseline, and last baseline</span>.</p>
+			<p>Just like the previous example, the same properties are applied but using <span>align-content:;</span>, grid tracks are aligned along the row axis.</p>
+		</div>
+		
+		<!-- CSS Grid Example 10 -->
+		<div class="col col-lg-6 col-sm-12 col-12 m-4 align-self-center">
+			<p class="codepen" data-height="400" data-theme-id="light" data-default-tab="css,result" data-user="jharrison67" data-slug-hash="gOpGKJX" style="height: 400px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;" data-pen-title="css grid 11">
+  			<span>See the Pen <a href="https://codepen.io/jharrison67/pen/gOpGKJX">
+  			css grid 11</a> by James (<a href="https://codepen.io/jharrison67">@jharrison67</a>)
+  			on <a href="https://codepen.io">CodePen</a>.</span>
+			</p>
+			<script async src="https://static.codepen.io/assets/embed/ei.js"></script>
+		</div>
+		
+	</div> <!-- End of Row Wrapper-->
+
+
+</main> <!-- End of Main -->
+	
+<!-- Top Button -->	
+<button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>	
+	
+<!-- Start of Footer -->	
+<footer class="mb-0">
+	<nav class="navbar navbar-light bg-light p-5">
+	  <div class="row">
+		<div class="col">
+		  <a class="navbar-brand" href="index.html">Home</a>
+		  <a class="navbar-brand" href="about.html">About</a>
+		  <a class="navbar-brand" href="resources.html">Resources</a>
+		</div>	
+	  </div>	
+		
+	  <div class="row">
+		<div class="col">
+		  <a class="navbar-brand" href="https://gridbyexample.com/" target="_blank">Grid By Example</a>
+	  	  <a class="navbar-brand" href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Grid_Layout/Basic_Concepts_of_Grid_Layout" target="_blank">MDN Web Docs</a>
+		</div>	
+	  </div>
+	</nav>
+	<p class="text-center bg-light mb-0 pb-2">James Harrison | 2020</p>
+	
+</footer>
+<!-- End of Footer -->
+	
+<script>
+	//Get the button:
+	mybutton = document.getElementById("myBtn");
+
+	// When the user scrolls down 20px from the top of the document, show the button
+	window.onscroll = function() {scrollFunction()};
+
+	function scrollFunction() {
+	  if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+		mybutton.style.display = "block";
+	  } else {
+		mybutton.style.display = "none";
+	  }
+	}
+
+	// When the user clicks on the button, scroll to the top of the document
+	function topFunction() {
+	  document.body.scrollTop = 0; // For Safari
+	  document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+	}
+</script>
+</body>
+</html>
